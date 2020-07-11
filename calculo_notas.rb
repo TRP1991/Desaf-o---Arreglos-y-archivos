@@ -25,10 +25,9 @@ Ejemplos:
 
 data = File.open('notas.data').readlines
 data.map!{|line| line.split(",")}
-print data[0][0]
 
 def nota_mas_alta(grades)
-    "La nota más alta es #{grades[0]} es #{grades.map{|x| x.to_i}.max}"
+    "La nota más alta de #{grades[0]} es #{grades.map{|x| x.to_i}.max}"
 end
 
 pp nota_mas_alta(data[1])
