@@ -23,12 +23,8 @@ Ejemplos:
 
 =end
 
-#Apertura del archivo 'notas.data' que va quedando guardado en la variable original_data
-data = open ('notas.data').read.split(',')
+data = File.open('notas.data').readlines
+data.map!{|line| line.split(",")}
+print data[0][0]
 
-#Se transforman los datos obtenidos a float y se guardan en la variable data
-data = original_data.inject{|data|data.to_f}
-
-#Se define el método con dos argumentos. Esto hará que devuelva la nota más alta 
-def nota_mas_alta(name, grade)
-    a = name.split
+def nota_mas_alta(grades)
